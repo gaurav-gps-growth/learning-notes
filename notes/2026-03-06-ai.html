@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI · March 6, 2026</title>
+  <style>
+    body { font-family: Georgia, serif; max-width: 680px; margin: 60px auto; padding: 0 24px; color: #1a1a1a; line-height: 1.8; }
+    h1 { font-size: 1.4rem; color: #555; font-weight: normal; border-bottom: 1px solid #eee; padding-bottom: 12px; }
+    h2 { font-size: 1.6rem; margin-top: 8px; line-height: 1.3; }
+    p { margin: 1.2em 0; font-size: 1.05rem; }
+    strong { background: #fffbea; padding: 1px 3px; }
+    .back { display: inline-block; margin-top: 48px; font-size: 0.9rem; color: #888; text-decoration: none; font-family: sans-serif; }
+    .back:hover { color: #333; }
+    footer { margin-top: 60px; font-size: 0.8rem; color: #aaa; font-family: sans-serif; border-top: 1px solid #eee; padding-top: 16px; }
+  </style>
+</head>
+<body>
+<h1>AI Learnings · March 6, 2026</h1>
+<br>
+<h2>Mixture of Experts (MoE): When One Brain Isn't Enough</h2>
+<br>
+<p>There's a curious paradox at the heart of modern language models. We want them to be intelligent across thousands of domains—capable of discussing quantum mechanics one moment and creative writing the next—yet we also want them to be efficient, not wastily activating every parameter for every task. This tension gave birth to one of the most elegant scaling ideas in recent AI: Mixture of Experts, a technique that's quietly revolutionizing how we build capable yet efficient models.</p>
+<br>
+<p>Imagine you're running a large consulting firm. You could hire a generalist who knows a little about everything, or you could hire specialists and have someone intelligent direct each client to the right expert. The latter approach wastes less expertise and often produces better results. That's the core insight behind MoE. Instead of one monolithic neural network, you have multiple specialized "expert" networks, and a separate "router" network that learns which expert (or experts) should handle each input.</p>
+<br>
+<p>The technique isn't new—Jacobs, Jordan, and colleagues proposed it in the 1990s—but it's experiencing renaissance now because Transformers made it practical at massive scale. When Google researchers and others applied MoE to Transformer-based language models, something remarkable happened: they could scale models to billions or trillions of parameters without proportionally increasing computational cost during inference. The Mixture of Experts GShard model, trained in 2020, demonstrated that you could achieve performance equivalent to much larger dense models while using a fraction of the computation.</p>
+<br>
+<p>Here's how it actually works in practice. Consider a language model with 128 expert networks. When you feed in a token (a piece of text), the router network doesn't send it to all 128 experts. Instead, it assigns each token to perhaps the top 2 or 8 experts based on learned routing decisions. This means that for any given input, you're only computing a sparse subset of the model's capacity. A token about biology might route to biology and general-reasoning experts, while a token about programming routes elsewhere. The outputs from selected experts are then combined (usually via weighted averaging) to produce the final result.</p>
+<br>
+<p>The elegance lies in what happens during training. The router learns through backpropagation which experts should specialize in which types of information. You don't manually assign "expert 42 is the biology expert"—it emerges organically. Some experts naturally develop broad reasoning skills, others become domain specialists, and some become almost like attention mechanisms, learning to route information intelligently.</p>
+<br>
+<p>But MoE isn't without complications. There's a phenomenon called "load balancing" that makes training tricky: if the router strongly prefers certain experts, those experts become overloaded while others atrophy. Researchers have developed clever losses and techniques (like auxiliary load balancing losses) to encourage more balanced expert utilization. There's also a trade-off: MoE models can be harder to train, require more memory during training (since all experts must fit in memory), and introduce some serving complexity at inference time.</p>
+<br>
+<p>Yet the promise is substantial. Recent models like Google's Switch Transformer and others have shown that you can build very large, capable models that activate far fewer parameters per token than dense alternatives. This opens pathways toward AI systems that are both powerful and environmentally efficient—a crucial consideration as we scale AI capabilities further.</p>
+<br>
+<p>💡 <strong>One thing to try today:</strong> Sketch out how you would design a Mixture of Experts system for your own decision-making—what would your different "expert" systems specialize in, and how would your "router" decide which to trust? Notice where the metaphor breaks down and where it holds.</p>
+
+<a class="back" href="../index.html">← All notes</a>
+<footer>Gaurav's Daily Learning Notes · Auto-generated every morning</footer>
+</body>
+</html>
