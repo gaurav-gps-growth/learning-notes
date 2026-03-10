@@ -1,0 +1,36 @@
+name: Backfill Last 7 Days
+
+on:
+  workflow_dispatch: # manual trigger only — run once
+
+permissions:
+  contents: write
+
+jobs:
+  backfill:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install anthropic
+
+      - name: Run backfill
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python backfill_notes.py
+
+      - name: Commit and push all notes
+        run: |
+          git config --global user.name "Daily Learning Bot"
+          git config --global user.email "bot@gaurav-learns.com"
+          git add .
+          git diff --staged --quiet || git commit -m "📚 Backfill: last 7 days of notes"
+          git push
