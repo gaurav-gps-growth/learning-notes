@@ -1,0 +1,39 @@
+name: Daily Learning Note
+
+on:
+  schedule:
+    # Runs at 7:00 AM IST (1:30 AM UTC) every day
+    - cron: '30 1 * * *'
+  workflow_dispatch: # allows manual trigger from GitHub UI
+
+permissions:
+  contents: write
+
+jobs:
+  generate-note:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install anthropic
+
+      - name: Generate today's note
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python generate_note.py
+
+      - name: Commit and push note
+        run: |
+          git config --global user.name "Daily Learning Bot"
+          git config --global user.email "bot@gaurav-learns.com"
+          git add notes/
+          git diff --staged --quiet || git commit -m "📚 Daily note: $(date +'%Y-%m-%d')"
+          git push
