@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI · March 13, 2026</title>
+  <style>
+    body { font-family: Georgia, serif; max-width: 680px; margin: 60px auto; padding: 0 24px; color: #1a1a1a; line-height: 1.8; }
+    h1 { font-size: 1.4rem; color: #555; font-weight: normal; border-bottom: 1px solid #eee; padding-bottom: 12px; }
+    h2 { font-size: 1.6rem; margin-top: 8px; line-height: 1.3; }
+    p { margin: 1.2em 0; font-size: 1.05rem; }
+    strong { background: #fffbea; padding: 1px 3px; }
+    .back { display: inline-block; margin-top: 48px; font-size: 0.9rem; color: #888; text-decoration: none; font-family: sans-serif; }
+    .back:hover { color: #333; }
+    footer { margin-top: 60px; font-size: 0.8rem; color: #aaa; font-family: sans-serif; border-top: 1px solid #eee; padding-top: 16px; }
+  </style>
+</head>
+<body>
+<h1>AI Learnings · March 13, 2026</h1>
+<br>
+<h2>Mixture of Experts (MoE): When One Brain Isn't Enough</h2>
+<br>
+<p>There's a peculiar problem that sits at the heart of modern AI. The bigger you make a neural network, the smarter it gets—but only up to a point. Beyond that, you hit a wall called the "compute ceiling." You can't just keep adding parameters indefinitely; at some scale, the computational cost becomes prohibitive, and training slows to a crawl. What if, instead of one massive brain doing all the thinking, you deployed many specialized brains and had a gating mechanism decide which ones should activate for any given problem?</p>
+<br>
+<p>This is the core insight behind Mixture of Experts, a technique that's having a quiet renaissance in 2026 after lying dormant for years. Rather than a single monolithic transformer processing every token with all its parameters, an MoE model partitions its hidden layers into multiple "expert" networks—typically dozens or even hundreds. For each input, a learned routing network (called the "gating network") dynamically decides which experts to activate. Only a sparse subset of experts fires up for any given token, keeping computational cost low while maintaining capacity.</p>
+<br>
+<p>Think of it like a hospital. Instead of hiring one doctor who knows everything, you hire specialists: a cardiologist, a neurologist, an orthopedist. When a patient arrives, a triage nurse (the gating network) routes them to the relevant expert. The patient doesn't wait for all doctors to examine them—only the right ones do. This is far more efficient than having one generalist examine every patient.</p>
+<br>
+<p>Google's Switch Transformer, published in 2021 by Lepikhin and colleagues, demonstrated that MoE could scale to a trillion parameters while actually *reducing* training compute compared to dense models of similar performance. More recently, companies like Mistral AI have shown that MoE architectures can deliver GPT-4-class performance at far lower inference costs. Their Mixtral 8x7B model—essentially eight 7-billion-parameter experts—achieves remarkable reasoning capability while being deployable on modest hardware.</p>
+<br>
+<p>The elegance here lies in the match between architecture and the structure of real problems. Not all tasks require all knowledge. A model reasoning about a math problem doesn't need the same neurons lighting up as when it's writing poetry. By allowing selective expert activation, MoE mimics how human experts work: a physicist doesn't use their entire brain when computing a trajectory; specific neural circuits activate for specific reasoning patterns.</p>
+<br>
+<p>But there's a catch—a subtle one. The gating network can collapse into a degenerate state where it routes all traffic to a few popular experts, wasting most of the model's capacity. Researchers have spent considerable effort designing load-balancing losses that penalize expert imbalance, ensuring the sparse routing remains diverse and meaningful. There's also the thorny question of whether experts truly specialize or whether they redundantly learn overlapping skills.</p>
+<br>
+<p>What makes this moment interesting is that MoE is no longer theoretical. It's powering production systems, and engineers are discovering that the routing decisions themselves are interpretable. You can see which experts activate for different domains and questions, turning the black box slightly more transparent. In a field obsessed with scale, MoE offers a different path: not bigger, but smarter in how you deploy what you have.</p>
+<br>
+<p>💡 <strong>One thing to try today:</strong> Take a complex problem you're working on—whether it's code, writing, or analysis—and consciously identify the distinct "expert modes" you shift between. How could you design your workflow to activate different tools or frameworks for each mode, rather than treating it as one monolithic task?</p>
+
+<a class="back" href="../index.html">← All notes</a>
+<footer>Gaurav's Daily Learning Notes · Auto-generated every morning</footer>
+</body>
+</html>
