@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI · March 20, 2026</title>
+  <style>
+    body { font-family: Georgia, serif; max-width: 680px; margin: 60px auto; padding: 0 24px; color: #1a1a1a; line-height: 1.8; }
+    h1 { font-size: 1.4rem; color: #555; font-weight: normal; border-bottom: 1px solid #eee; padding-bottom: 12px; }
+    h2 { font-size: 1.6rem; margin-top: 8px; line-height: 1.3; }
+    p { margin: 1.2em 0; font-size: 1.05rem; }
+    strong { background: #fffbea; padding: 1px 3px; }
+    .back { display: inline-block; margin-top: 48px; font-size: 0.9rem; color: #888; text-decoration: none; font-family: sans-serif; }
+    .back:hover { color: #333; }
+    footer { margin-top: 60px; font-size: 0.8rem; color: #aaa; font-family: sans-serif; border-top: 1px solid #eee; padding-top: 16px; }
+  </style>
+</head>
+<body>
+<h1>AI Learnings · March 20, 2026</h1>
+<br>
+<h2>Mechanistic Interpretability: Reading the Mind of the Machine</h2>
+<br>
+<p>There's something profoundly unsettling about training a neural network that works brilliantly but refusing to explain itself. You feed it data, it learns patterns, it makes predictions with uncanny accuracy—and then you ask it *why*, and you get silence. This opacity has haunted deep learning for years, spawning the entire field of "explainability" research. But a newer, more ambitious approach is emerging: mechanistic interpretability, which doesn't just try to explain what a model does, but attempts to reverse-engineer *how* it does it at the level of individual neurons and circuits.</p>
+<br>
+<p>The distinction matters enormously. Traditional interpretability tools like LIME or SHAP are like asking a blackbox to show its work after the fact—they're post-hoc approximations. Mechanistic interpretability, by contrast, is archaeology. Researchers like Chris Olah at Anthropic and the teams at OpenAI are literally dissecting trained networks to find the basic computational units—the "circuits"—that solve specific problems. They've discovered that neurons often encode surprisingly human-legible features. In image classifiers, some neurons fire specifically for dog ears, others for stripes, others for angles. These aren't random activations; they're organized, reusable building blocks.</p>
+<br>
+<p>What makes this fascinating is that it reveals a kind of universal grammar in how neural networks think. When researchers studied transformer models trained on language, they found that certain attention heads specialize in detecting pronouns, others in identifying key noun-phrase relationships, still others in detecting when a sentence structure is unusual. These aren't hard-coded rules—they emerge from training—yet they're so consistent across different models that they look almost like discovered laws rather than learned behaviors.</p>
+<br>
+<p>The methodology is wonderfully detective-like. Researchers use activation patching (systematically zeroing out neurons and measuring the impact), probing (training small classifiers on hidden layer representations), and circuit analysis (tracing the flow of information from input through hidden layers to output). When they find a neuron that seems important, they ask: what inputs maximize its activation? What downstream neurons does it influence? Does it compose with other neurons in interpretable ways?</p>
+<br>
+<p>Anthropic's work on "Scaling Interpretability" has shown something both encouraging and humbling: as models get larger, they tend to become *more* interpretable, not less. The circuits become more specialized, more modular, more human-readable. It's as though scale creates room for cleaner solutions to emerge from gradient descent. A tiny model might rely on tangled, illegible shortcuts. A large model, drowning in parameters, can afford to organize its computation into neat, legible modules.</p>
+<br>
+<p>This matters beyond pure scientific curiosity. If we can read the "source code" of what a model is actually computing, we gain genuine safety advantages. We can identify when a model has learned dangerous shortcuts, when it's relying on spurious correlations, when its reasoning is brittle. We can debug it like software. We might even use these insights to build better architectures from the ground up, informed by what evolution through gradient descent has already discovered.</p>
+<br>
+<p>The frontier now is scaling these techniques to very large models and understanding whether they remain legible all the way up. Nobody yet knows if GPT-scale systems can be fully understood this way, or if their sheer complexity will force us into new conceptual frameworks.</p>
+<br>
+<p>💡 <strong>One thing to try today:</strong> Pick a simple, trained model (logistic regression, small CNN, or even a decision tree) and spend 30 minutes trying to articulate *exactly* what computation it's performing. What are the actual decision boundaries? What patterns is it using? This is mechanistic thinking applied to something you can actually reason about.</p>
+
+<a class="back" href="../index.html">← All notes</a>
+<footer>Gaurav's Daily Learning Notes · Auto-generated every morning</footer>
+</body>
+</html>
