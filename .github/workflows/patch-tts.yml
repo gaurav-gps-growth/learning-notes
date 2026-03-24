@@ -3,6 +3,9 @@ name: Patch TTS into existing notes
 on:
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   patch-tts:
     runs-on: ubuntu-latest
