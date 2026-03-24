@@ -1,0 +1,27 @@
+name: Patch TTS into existing notes
+
+on:
+  workflow_dispatch:
+
+jobs:
+  patch-tts:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run patch_tts.py
+        run: python patch_tts.py
+
+      - name: Commit patched files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add notes/
+          git diff --cached --quiet || git commit -m "Retrofit TTS player into all existing note pages"
+          git push
