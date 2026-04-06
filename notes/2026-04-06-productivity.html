@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Productivity · April 6, 2026</title>
+ <style>
+ body { font-family: Georgia, serif; max-width: 680px; margin: 60px auto; padding: 0 24px; color: #1a1a1a; line-height: 1.8; }
+ h1 { font-size: 1.4rem; color: #555; font-weight: normal; border-bottom: 1px solid #eee; padding-bottom: 12px; }
+ h2 { font-size: 1.6rem; margin-top: 8px; line-height: 1.3; }
+ p { margin: 1.2em 0; font-size: 1.05rem; }
+ strong { background: #fffbea; padding: 1px 3px; }
+ .back { display: inline-block; margin-top: 48px; font-size: 0.9rem; color: #888; text-decoration: none; font-family: sans-serif; }
+ .back:hover { color: #333; }
+ footer { margin-top: 60px; font-size: 0.8rem; color: #aaa; font-family: sans-serif; border-top: 1px solid #eee; padding-top: 16px; }
+
+ /* ── TTS Player ── */
+ #tts-bar {
+   position: sticky;
+   top: 0;
+   background: rgba(255,255,255,0.97);
+   backdrop-filter: blur(4px);
+   -webkit-backdrop-filter: blur(4px);
+   border-bottom: 1px solid #eee;
+   padding: 10px 0;
+   margin: -20px 0 36px;
+   font-family: sans-serif;
+   display: flex;
+   align-items: center;
+   gap: 10px;
+   font-size: 0.82rem;
+   z-index: 50;
+ }
+ #tts-bar button {
+   padding: 5px 14px;
+   border: 1px solid #ddd;
+   border-radius: 20px;
+   cursor: pointer;
+   font-size: 0.82rem;
+   background: white;
+   color: #444;
+   transition: background 0.15s, border-color 0.15s;
+   white-space: nowrap;
+ }
+ #tts-bar button:hover:not(:disabled) { background: #f5f5f5; border-color: #ccc; }
+ #tts-bar button:disabled { opacity: 0.35; cursor: default; }
+ #tts-bar button.active { background: #fffbea; border-color: #e0c060; }
+ #tts-bar select {
+   padding: 4px 6px;
+   border: 1px solid #ddd;
+   border-radius: 4px;
+   font-size: 0.8rem;
+   color: #555;
+   cursor: pointer;
+   background: white;
+ }
+ #tts-bar label { color: #999; font-size: 0.8rem; }
+ #tts-progress { color: #bbb; font-size: 0.78rem; letter-spacing: 0.02em; }
+ .tts-reading {
+   background: #fffbea !important;
+   border-radius: 3px;
+   outline: 2px solid #f0d060;
+   outline-offset: 2px;
+   transition: background 0.25s;
+ }
+ </style>
+</head>
+<body>
+<h1>Productivity Book Summary · April 6, 2026</h1>
+<br>
+<h2>The Two-Minute Rule: Why Friction, Not Willpower, Determines Your Behavior</h2>
+<br>
+<p>James Clear's *Atomic Habits* introduced millions to the concept of habit stacking and identity-based change, but buried within its architecture is a principle so deceptively simple that most readers miss its revolutionary potential: the two-minute rule. It's not about completing tasks in two minutes. It's about understanding that the barrier to any meaningful behavior isn't lack of motivation—it's friction.</p>
+<br>
+<p>The insight stems from behavioral psychology research showing that humans are fundamentally lazy in the thermodynamic sense. We follow paths of least resistance. When you want to build a new habit, Clear argues, don't obsess over willpower or motivation. Instead, engineer your environment so the desired behavior is the easiest option available. Make the friction so low that not doing it becomes the friction-heavy choice.</p>
+<br>
+<p>Consider the person who wants to exercise more. They don't fail because they lack commitment. They fail because the friction to *not* exercising (getting to the gym, changing clothes, enduring discomfort) is lower than the friction to the alternative (which requires zero effort). The two-minute rule flips this: reduce the target behavior to something so frictionless that resistance becomes irrational. Instead of "I will work out for an hour," the commitment becomes "I will put on my workout clothes." Not exercising while already dressed and ready is now the friction-heavy path.</p>
+<br>
+<p>What makes this genuinely powerful is that it circumvents the motivation problem entirely. We're taught that success requires discipline and willpower—a Protestant ethic embedded in productivity culture. But neuroscience suggests otherwise. Your brain allocates willpower as a finite resource. Expecting yourself to overcome high friction through sheer force exhausts this resource. You'll fail. The two-minute rule doesn't require you to be superhuman; it requires you to be smart about environmental design.</p>
+<br>
+<p>The applications extend beyond fitness. A writer struggling to begin a novel doesn't commit to writing 1,000 words daily. They commit to opening the document and writing one sentence. A person wanting to read more doesn't vow to finish a book monthly. They commit to reading one page. A developer wanting to code daily commits to opening their IDE and writing three lines. The ritual becomes automatic. The friction disappears. And here's the psychological magic: once you've begun with minimal friction, momentum takes over. The person who sits down to write one sentence often writes ten. The reader who opens to one page often reads a chapter.</p>
+<br>
+<p>This reframes productivity entirely. It's not about how hard you can push yourself in a moment of peak motivation. It's about how well you can design systems that make the desired behavior the path of least resistance. It's why successful people obsess over routine and environment rather than inspiration. Steve Jobs wore the same outfit every day, not from indecision, but to eliminate a friction point from his decision-making. Naval Ravikant talks about structuring his life so that the default behavior is what serves his long-term goals.</p>
+<br>
+<p>The hidden genius of the two-minute rule is that it's honest about human nature. It doesn't ask you to transcend your fundamental biology. It works *with* your tendency toward least resistance rather than against it. Build enough momentum through minimalism, and the behavior eventually becomes intrinsic. You won't need friction reduction anymore—the habit will have calcified into identity.</p>
+<br>
+<p>💡 <strong>One thing to try today:</strong> Identify one behavior you've been struggling to start (writing, exercising, learning). Reduce the entry point to a genuine two-minute action—not a vague commitment, but something so specific and effortless you can do it right now. Do it before you finish reading this. Then notice what happens next.</p>
+
+<a class="back" href="../index.html">← All notes</a>
+<footer>Gaurav's Daily Learning Notes · Auto-generated every morning</footer>
+<script>
+(function () {
+  if (!window.speechSynthesis) return;
+
+  var synth = window.speechSynthesis;
+  var els = [], idx = 0, playing = false, paused = false;
+
+  /* ── Voice priority: most natural / least robotic first ──
+     Falls back gracefully on any OS / browser                */
+  var PREFERRED_VOICES = [
+    'Google UK English Female',          // Chrome – best quality
+    'Google US English',                 // Chrome – very natural
+    'Microsoft Aria Online (Natural) - English (United States)',   // Edge
+    'Microsoft Jenny Online (Natural) - English (United States)',  // Edge
+    'Samantha',                          // macOS – high quality
+    'Karen',                             // macOS Australian – smooth
+    'Daniel',                            // macOS British – warm
+    'Moira',                             // macOS Irish – pleasant
+    'Tessa',                             // macOS South African – clear
+    'Rishi'                              // macOS Indian English – natural
+  ];
+
+  function pickVoice() {
+    var voices = synth.getVoices();
+    for (var i = 0; i < PREFERRED_VOICES.length; i++) {
+      var v = voices.find(function (x) { return x.name === PREFERRED_VOICES[i]; });
+      if (v) return v;
+    }
+    // Fallback: any voice with "Natural" or "Online" in the name
+    var natural = voices.find(function (v) { return /natural|online/i.test(v.name) && v.lang.startsWith('en'); });
+    if (natural) return natural;
+    // Fallback: en-GB or en-AU (tend to sound warmer than en-US defaults)
+    var regional = voices.find(function (v) { return v.lang === 'en-GB' || v.lang === 'en-AU'; });
+    if (regional) return regional;
+    // Final fallback: any English
+    return voices.find(function (v) { return v.lang.startsWith('en'); }) || null;
+  }
+
+  /* ── Collect readable elements (skip footer / back-link) ── */
+  function collect() {
+    return Array.from(document.querySelectorAll('h1, h2, p')).filter(function (el) {
+      return !el.closest('footer') &&
+             !el.classList.contains('back') &&
+             el.innerText.trim().length > 0;
+    });
+  }
+
+  /* ── Build the sticky player bar ── */
+  var bar = document.createElement('div');
+  bar.id = 'tts-bar';
+  bar.innerHTML =
+    '<button id="tts-play">🔊 Listen</button>' +
+    '<button id="tts-stop" disabled>⏹ Stop</button>' +
+    '<label>Speed:&nbsp;<select id="tts-rate">' +
+      '<option value="0.75">0.75×</option>' +
+      '<option value="0.9" selected>0.9×</option>' +
+      '<option value="1">1×</option>' +
+      '<option value="1.2">1.2×</option>' +
+    '</select></label>' +
+    '<span id="tts-progress"></span>';
+  document.body.insertBefore(bar, document.body.firstChild);
+
+  var playBtn = document.getElementById('tts-play');
+  var stopBtn = document.getElementById('tts-stop');
+  var rateEl  = document.getElementById('tts-rate');
+  var progEl  = document.getElementById('tts-progress');
+
+  /* ── Highlight current element ── */
+  function highlight(el) {
+    els.forEach(function (e) { e.classList.remove('tts-reading'); });
+    if (el) {
+      el.classList.add('tts-reading');
+      el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  }
+
+  /* ── Speak from a given index ── */
+  function speakAt(i) {
+    synth.cancel();
+    if (i >= els.length) { finish(); return; }
+    idx = i;
+    highlight(els[i]);
+    progEl.textContent = (i + 1) + ' / ' + els.length;
+
+    var utt = new SpeechSynthesisUtterance(els[i].innerText);
+    var voice = pickVoice();
+    if (voice) utt.voice = voice;
+    utt.rate  = parseFloat(rateEl.value);
+    utt.pitch = 0.95;   // slightly lower pitch = warmer, less sharp
+    utt.onend = function () { if (playing) speakAt(idx + 1); };
+    utt.onerror = function (e) { if (e.error !== 'interrupted') speakAt(idx + 1); };
+    synth.speak(utt);
+  }
+
+  /* ── Reset to idle state ── */
+  function finish() {
+    playing = false; paused = false;
+    highlight(null);
+    playBtn.textContent = '🔊 Listen';
+    playBtn.classList.remove('active');
+    stopBtn.disabled = true;
+    progEl.textContent = '';
+  }
+
+  /* ── Play / Pause / Resume ── */
+  playBtn.addEventListener('click', function () {
+    if (!playing && !paused) {
+      els = collect();
+      playing = true;
+      playBtn.textContent = '⏸ Pause';
+      playBtn.classList.add('active');
+      stopBtn.disabled = false;
+      speakAt(0);
+    } else if (playing) {
+      synth.pause();
+      paused = true; playing = false;
+      playBtn.textContent = '▶ Resume';
+      playBtn.classList.remove('active');
+    } else {
+      synth.resume();
+      paused = false; playing = true;
+      playBtn.textContent = '⏸ Pause';
+      playBtn.classList.add('active');
+    }
+  });
+
+  /* ── Stop ── */
+  stopBtn.addEventListener('click', function () {
+    synth.cancel();
+    finish();
+  });
+
+  /* ── Cancel on page exit ── */
+  window.addEventListener('beforeunload', function () { synth.cancel(); });
+})();
+</script>
+</body>
+</html>
