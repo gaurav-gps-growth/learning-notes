@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Customer Success · July 1, 2026</title>
+ <style>
+ body { font-family: Georgia, serif; max-width: 680px; margin: 60px auto; padding: 0 24px; color: #1a1a1a; line-height: 1.8; }
+ h1 { font-size: 1.4rem; color: #555; font-weight: normal; border-bottom: 1px solid #eee; padding-bottom: 12px; }
+ h2 { font-size: 1.6rem; margin-top: 8px; line-height: 1.3; }
+ p { margin: 1.2em 0; font-size: 1.05rem; }
+ strong { background: #fffbea; padding: 1px 3px; }
+ .back { display: inline-block; margin-top: 48px; font-size: 0.9rem; color: #888; text-decoration: none; font-family: sans-serif; }
+ .back:hover { color: #333; }
+ footer { margin-top: 60px; font-size: 0.8rem; color: #aaa; font-family: sans-serif; border-top: 1px solid #eee; padding-top: 16px; }
+
+ /* ── TTS Player ── */
+ #tts-bar {
+   position: sticky;
+   top: 0;
+   background: rgba(255,255,255,0.97);
+   backdrop-filter: blur(4px);
+   -webkit-backdrop-filter: blur(4px);
+   border-bottom: 1px solid #eee;
+   padding: 10px 0;
+   margin: -20px 0 36px;
+   font-family: sans-serif;
+   display: flex;
+   align-items: center;
+   gap: 10px;
+   font-size: 0.82rem;
+   z-index: 50;
+ }
+ #tts-bar button {
+   padding: 5px 14px;
+   border: 1px solid #ddd;
+   border-radius: 20px;
+   cursor: pointer;
+   font-size: 0.82rem;
+   background: white;
+   color: #444;
+   transition: background 0.15s, border-color 0.15s;
+   white-space: nowrap;
+ }
+ #tts-bar button:hover:not(:disabled) { background: #f5f5f5; border-color: #ccc; }
+ #tts-bar button:disabled { opacity: 0.35; cursor: default; }
+ #tts-bar button.active { background: #fffbea; border-color: #e0c060; }
+ #tts-bar select {
+   padding: 4px 6px;
+   border: 1px solid #ddd;
+   border-radius: 4px;
+   font-size: 0.8rem;
+   color: #555;
+   cursor: pointer;
+   background: white;
+ }
+ #tts-bar label { color: #999; font-size: 0.8rem; }
+ #tts-progress { color: #bbb; font-size: 0.78rem; letter-spacing: 0.02em; }
+ .tts-reading {
+   background: #fffbea !important;
+   border-radius: 3px;
+   outline: 2px solid #f0d060;
+   outline-offset: 2px;
+   transition: background 0.25s;
+ }
+ </style>
+</head>
+<body>
+<h1>Customer Success · July 1, 2026</h1>
+<br>
+<h2>Net Revenue Retention: The Silent Signal of Product-Market Fit</h2>
+<br>
+<p>When Salesforce's founder Marc Benioff talks about the metric that matters most, he doesn't mention churn rate or customer acquisition cost. He talks about net revenue retention—the idea that your existing customers should be generating more revenue this year than last year, even before you sign a single new deal. This metric is deceptively simple on the surface, yet it reveals something profound about whether your product actually solves real problems.</p>
+<br>
+<p>Net revenue retention (NRR) measures the percentage of recurring revenue from the beginning of a period that you still have at the end, after accounting for churn, but *also* including expansion revenue from existing customers. A company with 100% NRR broke even on customer losses against upgrades. One with 110% NRR is actually growing from its installed base alone. When you see companies like Slack or Datadog reporting NRRs above 130%, you're watching the compounding power of genuine product utility at work.</p>
+<br>
+<p>What makes NRR so elegant as a philosophy is that it flips the traditional sales-first narrative on its head. Instead of asking "how do we acquire more customers," it asks "are our customers getting so much value that they naturally spend more with us?" This shift is fundamental to modern customer success. It says that retention isn't just about keeping customers happy—it's about ensuring they're using your product in ways that directly impact their business, so they legitimately want to expand.</p>
+<br>
+<p>The mechanics require a different operational mindset. Rather than measuring success by new bookings, a customer success team optimized for NRR watches for leading indicators of expansion: adoption of premium features, multi-department usage, increased API calls, or deployment across new teams. At companies like HubSpot, the CS team actually gets rewarded for expansion revenue, not just for preventing churn. This creates a natural alignment between customer outcomes and company growth.</p>
+<br>
+<p>Consider Intercom's evolution as a case study. Early on, they focused heavily on churn prevention—the classic CS playbook of keeping customers from leaving. But over time, they realized their highest-performing customers weren't just the ones they retained; they were the ones who naturally expanded from one product to multiple modules. This insight led them to restructure their CS model around feature adoption and expansion plays. The result wasn't just healthier retention metrics; it was a flywheel where happy, expanding customers became the best advocates for attracting similar companies.</p>
+<br>
+<p>The challenging truth about NRR is that you can't fake it with sales tactics or clever contract structures. If customers aren't experiencing real value growth, you can't price your way to higher NRR. A customer might stick around for contractual reasons, but they won't expand. This metric has a way of forcing brutal honesty about product-market fit.</p>
+<br>
+<p>What's particularly interesting is how NRR works as a leading indicator for company health. VCs increasingly view an NRR above 110% as a signal that a SaaS company can achieve sustainable, profitable growth. It suggests that the business model itself is sound—that the product delivers enough value to justify increasing spend. Without it, a company might hit hypergrowth on acquisition alone, only to discover the foundation is hollow.</p>
+<br>
+<p>💡 <strong>One thing to try today:</strong> Sit down with your data team or log into your analytics platform and calculate your actual NRR for the past year. Break it down by cohort—which customer segments are expanding, and which are flat or churning? Schedule a 30-minute conversation with your top three expanding customers to understand what specific features or outcomes drove their expansion. The answer might reveal something critical about where your product is actually winning.</p>
+
+<a class="back" href="../index.html">← All notes</a>
+<footer>Gaurav's Daily Learning Notes · Auto-generated every morning</footer>
+<script>
+(function () {
+  if (!window.speechSynthesis) return;
+
+  var synth = window.speechSynthesis;
+  var els = [], idx = 0, playing = false, paused = false;
+
+  /* ── Voice priority: most natural / least robotic first ──
+     Falls back gracefully on any OS / browser                */
+  var PREFERRED_VOICES = [
+    'Google UK English Female',          // Chrome – best quality
+    'Google US English',                 // Chrome – very natural
+    'Microsoft Aria Online (Natural) - English (United States)',   // Edge
+    'Microsoft Jenny Online (Natural) - English (United States)',  // Edge
+    'Samantha',                          // macOS – high quality
+    'Karen',                             // macOS Australian – smooth
+    'Daniel',                            // macOS British – warm
+    'Moira',                             // macOS Irish – pleasant
+    'Tessa',                             // macOS South African – clear
+    'Rishi'                              // macOS Indian English – natural
+  ];
+
+  function pickVoice() {
+    var voices = synth.getVoices();
+    for (var i = 0; i < PREFERRED_VOICES.length; i++) {
+      var v = voices.find(function (x) { return x.name === PREFERRED_VOICES[i]; });
+      if (v) return v;
+    }
+    // Fallback: any voice with "Natural" or "Online" in the name
+    var natural = voices.find(function (v) { return /natural|online/i.test(v.name) && v.lang.startsWith('en'); });
+    if (natural) return natural;
+    // Fallback: en-GB or en-AU (tend to sound warmer than en-US defaults)
+    var regional = voices.find(function (v) { return v.lang === 'en-GB' || v.lang === 'en-AU'; });
+    if (regional) return regional;
+    // Final fallback: any English
+    return voices.find(function (v) { return v.lang.startsWith('en'); }) || null;
+  }
+
+  /* ── Collect readable elements (skip footer / back-link) ── */
+  function collect() {
+    return Array.from(document.querySelectorAll('h1, h2, p')).filter(function (el) {
+      return !el.closest('footer') &&
+             !el.classList.contains('back') &&
+             el.innerText.trim().length > 0;
+    });
+  }
+
+  /* ── Build the sticky player bar ── */
+  var bar = document.createElement('div');
+  bar.id = 'tts-bar';
+  bar.innerHTML =
+    '<button id="tts-play">🔊 Listen</button>' +
+    '<button id="tts-stop" disabled>⏹ Stop</button>' +
+    '<label>Speed:&nbsp;<select id="tts-rate">' +
+      '<option value="0.75">0.75×</option>' +
+      '<option value="0.9" selected>0.9×</option>' +
+      '<option value="1">1×</option>' +
+      '<option value="1.2">1.2×</option>' +
+    '</select></label>' +
+    '<span id="tts-progress"></span>';
+  document.body.insertBefore(bar, document.body.firstChild);
+
+  var playBtn = document.getElementById('tts-play');
+  var stopBtn = document.getElementById('tts-stop');
+  var rateEl  = document.getElementById('tts-rate');
+  var progEl  = document.getElementById('tts-progress');
+
+  /* ── Highlight current element ── */
+  function highlight(el) {
+    els.forEach(function (e) { e.classList.remove('tts-reading'); });
+    if (el) {
+      el.classList.add('tts-reading');
+      el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  }
+
+  /* ── Speak from a given index ── */
+  function speakAt(i) {
+    synth.cancel();
+    if (i >= els.length) { finish(); return; }
+    idx = i;
+    highlight(els[i]);
+    progEl.textContent = (i + 1) + ' / ' + els.length;
+
+    var utt = new SpeechSynthesisUtterance(els[i].innerText);
+    var voice = pickVoice();
+    if (voice) utt.voice = voice;
+    utt.rate  = parseFloat(rateEl.value);
+    utt.pitch = 0.95;   // slightly lower pitch = warmer, less sharp
+    utt.onend = function () { if (playing) speakAt(idx + 1); };
+    utt.onerror = function (e) { if (e.error !== 'interrupted') speakAt(idx + 1); };
+    synth.speak(utt);
+  }
+
+  /* ── Reset to idle state ── */
+  function finish() {
+    playing = false; paused = false;
+    highlight(null);
+    playBtn.textContent = '🔊 Listen';
+    playBtn.classList.remove('active');
+    stopBtn.disabled = true;
+    progEl.textContent = '';
+  }
+
+  /* ── Play / Pause / Resume ── */
+  playBtn.addEventListener('click', function () {
+    if (!playing && !paused) {
+      els = collect();
+      playing = true;
+      playBtn.textContent = '⏸ Pause';
+      playBtn.classList.add('active');
+      stopBtn.disabled = false;
+      speakAt(0);
+    } else if (playing) {
+      synth.pause();
+      paused = true; playing = false;
+      playBtn.textContent = '▶ Resume';
+      playBtn.classList.remove('active');
+    } else {
+      synth.resume();
+      paused = false; playing = true;
+      playBtn.textContent = '⏸ Pause';
+      playBtn.classList.add('active');
+    }
+  });
+
+  /* ── Stop ── */
+  stopBtn.addEventListener('click', function () {
+    synth.cancel();
+    finish();
+  });
+
+  /* ── Cancel on page exit ── */
+  window.addEventListener('beforeunload', function () { synth.cancel(); });
+})();
+</script>
+</body>
+</html>
