@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Philosophy · August 1, 2026</title>
+ <style>
+ body { font-family: Georgia, serif; max-width: 680px; margin: 60px auto; padding: 0 24px; color: #1a1a1a; line-height: 1.8; }
+ h1 { font-size: 1.4rem; color: #555; font-weight: normal; border-bottom: 1px solid #eee; padding-bottom: 12px; }
+ h2 { font-size: 1.6rem; margin-top: 8px; line-height: 1.3; }
+ p { margin: 1.2em 0; font-size: 1.05rem; }
+ strong { background: #fffbea; padding: 1px 3px; }
+ .back { display: inline-block; margin-top: 48px; font-size: 0.9rem; color: #888; text-decoration: none; font-family: sans-serif; }
+ .back:hover { color: #333; }
+ footer { margin-top: 60px; font-size: 0.8rem; color: #aaa; font-family: sans-serif; border-top: 1px solid #eee; padding-top: 16px; }
+
+ /* ── TTS Player ── */
+ #tts-bar {
+   position: sticky;
+   top: 0;
+   background: rgba(255,255,255,0.97);
+   backdrop-filter: blur(4px);
+   -webkit-backdrop-filter: blur(4px);
+   border-bottom: 1px solid #eee;
+   padding: 10px 0;
+   margin: -20px 0 36px;
+   font-family: sans-serif;
+   display: flex;
+   align-items: center;
+   gap: 10px;
+   font-size: 0.82rem;
+   z-index: 50;
+ }
+ #tts-bar button {
+   padding: 5px 14px;
+   border: 1px solid #ddd;
+   border-radius: 20px;
+   cursor: pointer;
+   font-size: 0.82rem;
+   background: white;
+   color: #444;
+   transition: background 0.15s, border-color 0.15s;
+   white-space: nowrap;
+ }
+ #tts-bar button:hover:not(:disabled) { background: #f5f5f5; border-color: #ccc; }
+ #tts-bar button:disabled { opacity: 0.35; cursor: default; }
+ #tts-bar button.active { background: #fffbea; border-color: #e0c060; }
+ #tts-bar select {
+   padding: 4px 6px;
+   border: 1px solid #ddd;
+   border-radius: 4px;
+   font-size: 0.8rem;
+   color: #555;
+   cursor: pointer;
+   background: white;
+ }
+ #tts-bar label { color: #999; font-size: 0.8rem; }
+ #tts-progress { color: #bbb; font-size: 0.78rem; letter-spacing: 0.02em; }
+ .tts-reading {
+   background: #fffbea !important;
+   border-radius: 3px;
+   outline: 2px solid #f0d060;
+   outline-offset: 2px;
+   transition: background 0.25s;
+ }
+ </style>
+</head>
+<body>
+<h1>Philosophy · August 1, 2026</h1>
+<br>
+<h2>Epistemic Humility: The Power of Knowing What You Don't Know</h2>
+<br>
+<p>There's a peculiar moment that arrives when you realize how much you don't understand. Not the paralytic kind of doubt that freezes you, but the clarifying kind—the recognition that the world is vastly more complex than your current mental models can contain. This is epistemic humility, and it might be the most underrated intellectual virtue in an age of confident proclamations.</p>
+<br>
+<p>The concept isn't new. Socrates allegedly said he was the wisest man in Athens because he alone knew that he knew nothing. But epistemic humility isn't mere self-deprecation or academic modesty. It's a structural recognition that knowledge has limits, that certainty often masks hidden assumptions, and that the shape of what we don't know often matters more than what we do. Carl Sagan captured this beautifully when he noted that absence of evidence isn't evidence of absence—a lesson we desperately need in an era where people confidently assert conclusions about complex systems they've barely studied.</p>
+<br>
+<p>The practical stakes are enormous. Consider how many catastrophic decisions stem from false certainty. Leaders who wage wars convinced of their righteousness. Investors who pursue strategies based on incomplete market models. Parents who impose rigid parenting philosophies believing there's one "correct" way to raise children. In each case, a dose of epistemic humility—a willingness to hold convictions lightly, to update when evidence shifts, to acknowledge the blindspots in one's own perspective—could have prevented tremendous harm.</p>
+<br>
+<p>What makes epistemic humility distinct from mere wishy-washy uncertainty is that it's compatible with action and conviction. You can be genuinely humble about the limits of your knowledge while still making the best decision available with current information. A doctor diagnosing a patient doesn't need perfect certainty to prescribe treatment; she needs intellectual honesty about what the evidence actually supports and what remains uncertain. This is the sweet spot where humility and responsibility meet.</p>
+<br>
+<p>The psychologist Philip Tetlock spent decades studying expert prediction and found something striking: the forecasters who admitted uncertainty and revised their views as new information arrived—the epistemically humble ones—consistently outperformed confident experts who doubled down on their initial predictions. Humility, paradoxically, was correlated with accuracy. Those willing to say "I was wrong" or "I overestimated my confidence" developed better mental models than those who treated their beliefs as fixed fortifications to be defended.</p>
+<br>
+<p>In our current moment, epistemic humility feels countercultural. The incentive structures of social media reward confident hot takes. Polarization thrives on the certainty of opposing tribes. Scientific literacy sometimes gets confused with the ability to cite studies confidently rather than understanding what scientists actually claim to know and what remains uncertain. We've created a culture where admitting "I don't know" or "I was mistaken" reads as weakness rather than strength.</p>
+<br>
+<p>Yet the most interesting minds tend toward humility. They ask better questions. They listen more carefully. They're less likely to miss signals that contradict their worldview because they're actively looking for them rather than defending against them. And crucially, they build more reliable models of reality—not because they know everything, but because they know something important: that what they don't know might matter most.</p>
+<br>
+<p>💡 <strong>One thing to try today:</strong> In your next conversation about a topic you care about, pause and ask yourself: "What am I not considering here? What would someone who disagreed with me say I'm missing?" Then actually listen to the answer without immediately defending your position.</p>
+
+<a class="back" href="../index.html">← All notes</a>
+<footer>Gaurav's Daily Learning Notes · Auto-generated every morning</footer>
+<script>
+(function () {
+  if (!window.speechSynthesis) return;
+
+  var synth = window.speechSynthesis;
+  var els = [], idx = 0, playing = false, paused = false;
+
+  /* ── Voice priority: most natural / least robotic first ──
+     Falls back gracefully on any OS / browser                */
+  var PREFERRED_VOICES = [
+    'Google UK English Female',          // Chrome – best quality
+    'Google US English',                 // Chrome – very natural
+    'Microsoft Aria Online (Natural) - English (United States)',   // Edge
+    'Microsoft Jenny Online (Natural) - English (United States)',  // Edge
+    'Samantha',                          // macOS – high quality
+    'Karen',                             // macOS Australian – smooth
+    'Daniel',                            // macOS British – warm
+    'Moira',                             // macOS Irish – pleasant
+    'Tessa',                             // macOS South African – clear
+    'Rishi'                              // macOS Indian English – natural
+  ];
+
+  function pickVoice() {
+    var voices = synth.getVoices();
+    for (var i = 0; i < PREFERRED_VOICES.length; i++) {
+      var v = voices.find(function (x) { return x.name === PREFERRED_VOICES[i]; });
+      if (v) return v;
+    }
+    // Fallback: any voice with "Natural" or "Online" in the name
+    var natural = voices.find(function (v) { return /natural|online/i.test(v.name) && v.lang.startsWith('en'); });
+    if (natural) return natural;
+    // Fallback: en-GB or en-AU (tend to sound warmer than en-US defaults)
+    var regional = voices.find(function (v) { return v.lang === 'en-GB' || v.lang === 'en-AU'; });
+    if (regional) return regional;
+    // Final fallback: any English
+    return voices.find(function (v) { return v.lang.startsWith('en'); }) || null;
+  }
+
+  /* ── Collect readable elements (skip footer / back-link) ── */
+  function collect() {
+    return Array.from(document.querySelectorAll('h1, h2, p')).filter(function (el) {
+      return !el.closest('footer') &&
+             !el.classList.contains('back') &&
+             el.innerText.trim().length > 0;
+    });
+  }
+
+  /* ── Build the sticky player bar ── */
+  var bar = document.createElement('div');
+  bar.id = 'tts-bar';
+  bar.innerHTML =
+    '<button id="tts-play">🔊 Listen</button>' +
+    '<button id="tts-stop" disabled>⏹ Stop</button>' +
+    '<label>Speed:&nbsp;<select id="tts-rate">' +
+      '<option value="0.75">0.75×</option>' +
+      '<option value="0.9" selected>0.9×</option>' +
+      '<option value="1">1×</option>' +
+      '<option value="1.2">1.2×</option>' +
+    '</select></label>' +
+    '<span id="tts-progress"></span>';
+  document.body.insertBefore(bar, document.body.firstChild);
+
+  var playBtn = document.getElementById('tts-play');
+  var stopBtn = document.getElementById('tts-stop');
+  var rateEl  = document.getElementById('tts-rate');
+  var progEl  = document.getElementById('tts-progress');
+
+  /* ── Highlight current element ── */
+  function highlight(el) {
+    els.forEach(function (e) { e.classList.remove('tts-reading'); });
+    if (el) {
+      el.classList.add('tts-reading');
+      el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  }
+
+  /* ── Speak from a given index ── */
+  function speakAt(i) {
+    synth.cancel();
+    if (i >= els.length) { finish(); return; }
+    idx = i;
+    highlight(els[i]);
+    progEl.textContent = (i + 1) + ' / ' + els.length;
+
+    var utt = new SpeechSynthesisUtterance(els[i].innerText);
+    var voice = pickVoice();
+    if (voice) utt.voice = voice;
+    utt.rate  = parseFloat(rateEl.value);
+    utt.pitch = 0.95;   // slightly lower pitch = warmer, less sharp
+    utt.onend = function () { if (playing) speakAt(idx + 1); };
+    utt.onerror = function (e) { if (e.error !== 'interrupted') speakAt(idx + 1); };
+    synth.speak(utt);
+  }
+
+  /* ── Reset to idle state ── */
+  function finish() {
+    playing = false; paused = false;
+    highlight(null);
+    playBtn.textContent = '🔊 Listen';
+    playBtn.classList.remove('active');
+    stopBtn.disabled = true;
+    progEl.textContent = '';
+  }
+
+  /* ── Play / Pause / Resume ── */
+  playBtn.addEventListener('click', function () {
+    if (!playing && !paused) {
+      els = collect();
+      playing = true;
+      playBtn.textContent = '⏸ Pause';
+      playBtn.classList.add('active');
+      stopBtn.disabled = false;
+      speakAt(0);
+    } else if (playing) {
+      synth.pause();
+      paused = true; playing = false;
+      playBtn.textContent = '▶ Resume';
+      playBtn.classList.remove('active');
+    } else {
+      synth.resume();
+      paused = false; playing = true;
+      playBtn.textContent = '⏸ Pause';
+      playBtn.classList.add('active');
+    }
+  });
+
+  /* ── Stop ── */
+  stopBtn.addEventListener('click', function () {
+    synth.cancel();
+    finish();
+  });
+
+  /* ── Cancel on page exit ── */
+  window.addEventListener('beforeunload', function () { synth.cancel(); });
+})();
+</script>
+</body>
+</html>
