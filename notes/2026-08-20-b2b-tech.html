@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>B2B Tech · August 20, 2026</title>
+ <style>
+ body { font-family: Georgia, serif; max-width: 680px; margin: 60px auto; padding: 0 24px; color: #1a1a1a; line-height: 1.8; }
+ h1 { font-size: 1.4rem; color: #555; font-weight: normal; border-bottom: 1px solid #eee; padding-bottom: 12px; }
+ h2 { font-size: 1.6rem; margin-top: 8px; line-height: 1.3; }
+ p { margin: 1.2em 0; font-size: 1.05rem; }
+ strong { background: #fffbea; padding: 1px 3px; }
+ .back { display: inline-block; margin-top: 48px; font-size: 0.9rem; color: #888; text-decoration: none; font-family: sans-serif; }
+ .back:hover { color: #333; }
+ footer { margin-top: 60px; font-size: 0.8rem; color: #aaa; font-family: sans-serif; border-top: 1px solid #eee; padding-top: 16px; }
+
+ /* ── TTS Player ── */
+ #tts-bar {
+   position: sticky;
+   top: 0;
+   background: rgba(255,255,255,0.97);
+   backdrop-filter: blur(4px);
+   -webkit-backdrop-filter: blur(4px);
+   border-bottom: 1px solid #eee;
+   padding: 10px 0;
+   margin: -20px 0 36px;
+   font-family: sans-serif;
+   display: flex;
+   align-items: center;
+   gap: 10px;
+   font-size: 0.82rem;
+   z-index: 50;
+ }
+ #tts-bar button {
+   padding: 5px 14px;
+   border: 1px solid #ddd;
+   border-radius: 20px;
+   cursor: pointer;
+   font-size: 0.82rem;
+   background: white;
+   color: #444;
+   transition: background 0.15s, border-color 0.15s;
+   white-space: nowrap;
+ }
+ #tts-bar button:hover:not(:disabled) { background: #f5f5f5; border-color: #ccc; }
+ #tts-bar button:disabled { opacity: 0.35; cursor: default; }
+ #tts-bar button.active { background: #fffbea; border-color: #e0c060; }
+ #tts-bar select {
+   padding: 4px 6px;
+   border: 1px solid #ddd;
+   border-radius: 4px;
+   font-size: 0.8rem;
+   color: #555;
+   cursor: pointer;
+   background: white;
+ }
+ #tts-bar label { color: #999; font-size: 0.8rem; }
+ #tts-progress { color: #bbb; font-size: 0.78rem; letter-spacing: 0.02em; }
+ .tts-reading {
+   background: #fffbea !important;
+   border-radius: 3px;
+   outline: 2px solid #f0d060;
+   outline-offset: 2px;
+   transition: background 0.25s;
+ }
+ </style>
+</head>
+<body>
+<h1>B2B Tech Update · August 20, 2026</h1>
+<br>
+<h2>Agentic AI in Enterprise Workflows: When Software Stops Waiting for Instructions</h2>
+<br>
+<p>The old model of enterprise software is finally breaking. For decades, we've built systems that wait. A salesperson opens Salesforce and *then* updates a deal. A finance team opens their ERP and *then* records a transaction. A marketer opens their CDP and *then* segments an audience. The human has always been the initiator, the decision-maker, the one who decides what needs doing. But something fundamental is shifting in B2B software right now, and it's not just about smarter AI—it's about *autonomous agency*.</p>
+<br>
+<p>What's emerging isn't the chatbot revolution everyone predicted. It's something messier and more profound: software that observes your business processes, identifies inefficiencies or opportunities in real-time, and takes action without waiting for human permission. Companies like Anthropic, Scale AI, and emerging startups like Humane Intelligence are building what they call "agentic" layers on top of existing enterprise systems. These aren't replacements for your CRM or accounting software. They're intelligent observers that sit between your tools and your team, watching patterns and acting.</p>
+<br>
+<p>Consider a real example happening right now: a mid-market SaaS company using an agentic layer on top of their sales stack notices that deals with certain characteristics consistently slip through forecast. The system doesn't report this to a sales manager and wait for a response. It autonomously flags at-risk deals, adds context from email and calendar data, and pre-routes follow-up tasks to the right account executives with suggested talking points—all before the morning standup. The revenue ops team doesn't build the workflow. They just define the outcome they want ("no surprise slippage"), and the system optimizes toward it.</p>
+<br>
+<p>The technical breakthrough here is multi-fold. Better foundation models mean these systems can actually reason about context rather than pattern-match. Improved guardrails and synthetic task generation let companies deploy agents with acceptable risk profiles. And perhaps most importantly, the explosion of APIs and data accessibility in modern B2B stacks means agents have something to actually *observe* and *act upon*. Your 2015 enterprise software was an island. Your 2026 enterprise stack is a nervous system.</p>
+<br>
+<p>But here's what's genuinely unsettling, and why this matters beyond the hype cycle: this shift upends the product design philosophy of the last twenty years. Salesforce didn't win by being autonomous—it won by being *customizable*. Every workflow could be built, tweaked, and owned by humans. Agentic systems invert this. They're opinionated. They have preferences. They make decisions you didn't explicitly encode. That's terrifying and powerful simultaneously.</p>
+<br>
+<p>The immediate business impact is measurable. Early adopters are seeing 15-30% efficiency gains in repetitive knowledge work—not through automation in the traditional sense (like RPA), but through constant, invisible optimization. The medium-term risk is that companies over-delegate and lose visibility into why decisions are being made. The long-term question is architectural: will enterprises build moats around these agents, or will they become commoditized middleware?</p>
+<br>
+<p>What's certain is this: the next two years will separate the B2B software winners from the laggards not by feature parity, but by how gracefully they embed agency into their products without losing human control.</p>
+<br>
+<p>💡 <strong>One thing to try today:</strong> Audit one repetitive workflow your team handles weekly (like lead qualification or expense approval). List the data points that trigger decisions. Ask: *Could an agent observe these signals and recommend action before anyone asks?* Sketch what that would look like.</p>
+
+<a class="back" href="../index.html">← All notes</a>
+<footer>Gaurav's Daily Learning Notes · Auto-generated every morning</footer>
+<script>
+(function () {
+  if (!window.speechSynthesis) return;
+
+  var synth = window.speechSynthesis;
+  var els = [], idx = 0, playing = false, paused = false;
+
+  /* ── Voice priority: most natural / least robotic first ──
+     Falls back gracefully on any OS / browser                */
+  var PREFERRED_VOICES = [
+    'Google UK English Female',          // Chrome – best quality
+    'Google US English',                 // Chrome – very natural
+    'Microsoft Aria Online (Natural) - English (United States)',   // Edge
+    'Microsoft Jenny Online (Natural) - English (United States)',  // Edge
+    'Samantha',                          // macOS – high quality
+    'Karen',                             // macOS Australian – smooth
+    'Daniel',                            // macOS British – warm
+    'Moira',                             // macOS Irish – pleasant
+    'Tessa',                             // macOS South African – clear
+    'Rishi'                              // macOS Indian English – natural
+  ];
+
+  function pickVoice() {
+    var voices = synth.getVoices();
+    for (var i = 0; i < PREFERRED_VOICES.length; i++) {
+      var v = voices.find(function (x) { return x.name === PREFERRED_VOICES[i]; });
+      if (v) return v;
+    }
+    // Fallback: any voice with "Natural" or "Online" in the name
+    var natural = voices.find(function (v) { return /natural|online/i.test(v.name) && v.lang.startsWith('en'); });
+    if (natural) return natural;
+    // Fallback: en-GB or en-AU (tend to sound warmer than en-US defaults)
+    var regional = voices.find(function (v) { return v.lang === 'en-GB' || v.lang === 'en-AU'; });
+    if (regional) return regional;
+    // Final fallback: any English
+    return voices.find(function (v) { return v.lang.startsWith('en'); }) || null;
+  }
+
+  /* ── Collect readable elements (skip footer / back-link) ── */
+  function collect() {
+    return Array.from(document.querySelectorAll('h1, h2, p')).filter(function (el) {
+      return !el.closest('footer') &&
+             !el.classList.contains('back') &&
+             el.innerText.trim().length > 0;
+    });
+  }
+
+  /* ── Build the sticky player bar ── */
+  var bar = document.createElement('div');
+  bar.id = 'tts-bar';
+  bar.innerHTML =
+    '<button id="tts-play">🔊 Listen</button>' +
+    '<button id="tts-stop" disabled>⏹ Stop</button>' +
+    '<label>Speed:&nbsp;<select id="tts-rate">' +
+      '<option value="0.75">0.75×</option>' +
+      '<option value="0.9" selected>0.9×</option>' +
+      '<option value="1">1×</option>' +
+      '<option value="1.2">1.2×</option>' +
+    '</select></label>' +
+    '<span id="tts-progress"></span>';
+  document.body.insertBefore(bar, document.body.firstChild);
+
+  var playBtn = document.getElementById('tts-play');
+  var stopBtn = document.getElementById('tts-stop');
+  var rateEl  = document.getElementById('tts-rate');
+  var progEl  = document.getElementById('tts-progress');
+
+  /* ── Highlight current element ── */
+  function highlight(el) {
+    els.forEach(function (e) { e.classList.remove('tts-reading'); });
+    if (el) {
+      el.classList.add('tts-reading');
+      el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  }
+
+  /* ── Speak from a given index ── */
+  function speakAt(i) {
+    synth.cancel();
+    if (i >= els.length) { finish(); return; }
+    idx = i;
+    highlight(els[i]);
+    progEl.textContent = (i + 1) + ' / ' + els.length;
+
+    var utt = new SpeechSynthesisUtterance(els[i].innerText);
+    var voice = pickVoice();
+    if (voice) utt.voice = voice;
+    utt.rate  = parseFloat(rateEl.value);
+    utt.pitch = 0.95;   // slightly lower pitch = warmer, less sharp
+    utt.onend = function () { if (playing) speakAt(idx + 1); };
+    utt.onerror = function (e) { if (e.error !== 'interrupted') speakAt(idx + 1); };
+    synth.speak(utt);
+  }
+
+  /* ── Reset to idle state ── */
+  function finish() {
+    playing = false; paused = false;
+    highlight(null);
+    playBtn.textContent = '🔊 Listen';
+    playBtn.classList.remove('active');
+    stopBtn.disabled = true;
+    progEl.textContent = '';
+  }
+
+  /* ── Play / Pause / Resume ── */
+  playBtn.addEventListener('click', function () {
+    if (!playing && !paused) {
+      els = collect();
+      playing = true;
+      playBtn.textContent = '⏸ Pause';
+      playBtn.classList.add('active');
+      stopBtn.disabled = false;
+      speakAt(0);
+    } else if (playing) {
+      synth.pause();
+      paused = true; playing = false;
+      playBtn.textContent = '▶ Resume';
+      playBtn.classList.remove('active');
+    } else {
+      synth.resume();
+      paused = false; playing = true;
+      playBtn.textContent = '⏸ Pause';
+      playBtn.classList.add('active');
+    }
+  });
+
+  /* ── Stop ── */
+  stopBtn.addEventListener('click', function () {
+    synth.cancel();
+    finish();
+  });
+
+  /* ── Cancel on page exit ── */
+  window.addEventListener('beforeunload', function () { synth.cancel(); });
+})();
+</script>
+</body>
+</html>
