@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>AI · October 16, 2026</title>
+ <style>
+ body { font-family: Georgia, serif; max-width: 680px; margin: 60px auto; padding: 0 24px; color: #1a1a1a; line-height: 1.8; }
+ h1 { font-size: 1.4rem; color: #555; font-weight: normal; border-bottom: 1px solid #eee; padding-bottom: 12px; }
+ h2 { font-size: 1.6rem; margin-top: 8px; line-height: 1.3; }
+ p { margin: 1.2em 0; font-size: 1.05rem; }
+ strong { background: #fffbea; padding: 1px 3px; }
+ .back { display: inline-block; margin-top: 48px; font-size: 0.9rem; color: #888; text-decoration: none; font-family: sans-serif; }
+ .back:hover { color: #333; }
+ footer { margin-top: 60px; font-size: 0.8rem; color: #aaa; font-family: sans-serif; border-top: 1px solid #eee; padding-top: 16px; }
+
+ /* ── TTS Player ── */
+ #tts-bar {
+   position: sticky;
+   top: 0;
+   background: rgba(255,255,255,0.97);
+   backdrop-filter: blur(4px);
+   -webkit-backdrop-filter: blur(4px);
+   border-bottom: 1px solid #eee;
+   padding: 10px 0;
+   margin: -20px 0 36px;
+   font-family: sans-serif;
+   display: flex;
+   align-items: center;
+   gap: 10px;
+   font-size: 0.82rem;
+   z-index: 50;
+ }
+ #tts-bar button {
+   padding: 5px 14px;
+   border: 1px solid #ddd;
+   border-radius: 20px;
+   cursor: pointer;
+   font-size: 0.82rem;
+   background: white;
+   color: #444;
+   transition: background 0.15s, border-color 0.15s;
+   white-space: nowrap;
+ }
+ #tts-bar button:hover:not(:disabled) { background: #f5f5f5; border-color: #ccc; }
+ #tts-bar button:disabled { opacity: 0.35; cursor: default; }
+ #tts-bar button.active { background: #fffbea; border-color: #e0c060; }
+ #tts-bar select {
+   padding: 4px 6px;
+   border: 1px solid #ddd;
+   border-radius: 4px;
+   font-size: 0.8rem;
+   color: #555;
+   cursor: pointer;
+   background: white;
+ }
+ #tts-bar label { color: #999; font-size: 0.8rem; }
+ #tts-progress { color: #bbb; font-size: 0.78rem; letter-spacing: 0.02em; }
+ .tts-reading {
+   background: #fffbea !important;
+   border-radius: 3px;
+   outline: 2px solid #f0d060;
+   outline-offset: 2px;
+   transition: background 0.25s;
+ }
+ </style>
+</head>
+<body>
+<h1>AI Learnings · October 16, 2026</h1>
+<br>
+<h2>Mechanistic Interpretability: Reading the Mind of the Black Box</h2>
+<br>
+<p>There's a peculiar irony at the heart of modern AI: the systems we've built to reason, create, and decide have become so complex that we've lost the ability to explain *how* they actually work. A neural network with billions of parameters is, in many ways, as inscrutable as the human brain itself. This opacity creates an enormous problem—not just for trust, but for safety and improvement. Enter mechanistic interpretability, a field that's attempting to do something radical: reverse-engineer deep learning models to understand the actual computational mechanisms underlying their intelligence.</p>
+<br>
+<p>Mechanistic interpretability differs fundamentally from other explainability approaches. When you ask a model to generate a saliency map showing which pixels influenced a decision, or when you probe what "concepts" a network has learned, you're still working at the surface level. Mechanistic interpretability goes deeper, trying to identify the actual mathematical operations and feature circuits that the model is performing—the equivalent of finding individual neurons and synapses performing specific calculations, then mapping how they wire together to produce intelligent behavior.</p>
+<br>
+<p>Consider the work Chris Olah and his team at Anthropic have done studying vision models. They've discovered that individual neurons sometimes act as feature detectors for surprisingly specific things: dog faces, curves, textures. But more intriguingly, they've found that intermediate layers seem to perform distinct computational steps, almost like a pipeline of transformations. A layer might detect edges, the next layer combines those edges into shapes, and later layers compose shapes into objects. It's not that someone programmed this hierarchy explicitly—it emerged naturally from training on image classification tasks. Understanding *why* this architecture emerges gives us profound insight into what the model actually "understands."</p>
+<br>
+<p>The technical toolkit is evolving rapidly. Researchers now use activation patching (removing or modifying activations to see what breaks), causal tracing (backtracking which computations led to a specific output), and sparse autoencoders (learning compressed, interpretable representations of what neurons encode). There's a growing consensus that transformers—the architecture powering GPT and Claude—have somewhat learnable internal structure, though it's messier than we'd like.</p>
+<br>
+<p>Why does this matter practically? Consider a medical AI system that makes life-or-death decisions. Regulatory bodies don't accept "the neural network said so" as justification. If we could mechanistically interpret the model, we could verify that it's using reasoning that aligns with established medical science, not spurious correlations in training data. We could catch failure modes before deployment. For alignment research, the stakes are even higher: if we eventually build AI systems with concerning capabilities, mechanistic interpretability might be our best tool for understanding and constraining them.</p>
+<br>
+<p>The field is still nascent—we're perhaps at the stage of reading simple circuits in toy models. Current interpretability research often focuses on small models trained on narrow tasks. Scaling these techniques to explain the reasoning in GPT-4-scale systems remains an open challenge, one that many researchers believe is among the most important problems in AI safety.</p>
+<br>
+<p>Mechanistic interpretability offers something rare: a genuine path toward understanding rather than merely predicting machine behavior. It's the difference between knowing what a system does and knowing *how* it thinks.</p>
+<br>
+<p>💡 <strong>One thing to try today:</strong> Pick a simple image classification neural network and install an interpretability library like Captum or InterpretML. Train it on MNIST, then use activation visualizations to see what patterns individual filters in the second convolutional layer actually detect. Screenshot your most interesting finding—you'll be surprised how concrete the learned features become.</p>
+
+<a class="back" href="../index.html">← All notes</a>
+<footer>Gaurav's Daily Learning Notes · Auto-generated every morning</footer>
+<script>
+(function () {
+  if (!window.speechSynthesis) return;
+
+  var synth = window.speechSynthesis;
+  var els = [], idx = 0, playing = false, paused = false;
+
+  /* ── Voice priority: most natural / least robotic first ──
+     Falls back gracefully on any OS / browser                */
+  var PREFERRED_VOICES = [
+    'Google UK English Female',          // Chrome – best quality
+    'Google US English',                 // Chrome – very natural
+    'Microsoft Aria Online (Natural) - English (United States)',   // Edge
+    'Microsoft Jenny Online (Natural) - English (United States)',  // Edge
+    'Samantha',                          // macOS – high quality
+    'Karen',                             // macOS Australian – smooth
+    'Daniel',                            // macOS British – warm
+    'Moira',                             // macOS Irish – pleasant
+    'Tessa',                             // macOS South African – clear
+    'Rishi'                              // macOS Indian English – natural
+  ];
+
+  function pickVoice() {
+    var voices = synth.getVoices();
+    for (var i = 0; i < PREFERRED_VOICES.length; i++) {
+      var v = voices.find(function (x) { return x.name === PREFERRED_VOICES[i]; });
+      if (v) return v;
+    }
+    // Fallback: any voice with "Natural" or "Online" in the name
+    var natural = voices.find(function (v) { return /natural|online/i.test(v.name) && v.lang.startsWith('en'); });
+    if (natural) return natural;
+    // Fallback: en-GB or en-AU (tend to sound warmer than en-US defaults)
+    var regional = voices.find(function (v) { return v.lang === 'en-GB' || v.lang === 'en-AU'; });
+    if (regional) return regional;
+    // Final fallback: any English
+    return voices.find(function (v) { return v.lang.startsWith('en'); }) || null;
+  }
+
+  /* ── Collect readable elements (skip footer / back-link) ── */
+  function collect() {
+    return Array.from(document.querySelectorAll('h1, h2, p')).filter(function (el) {
+      return !el.closest('footer') &&
+             !el.classList.contains('back') &&
+             el.innerText.trim().length > 0;
+    });
+  }
+
+  /* ── Build the sticky player bar ── */
+  var bar = document.createElement('div');
+  bar.id = 'tts-bar';
+  bar.innerHTML =
+    '<button id="tts-play">🔊 Listen</button>' +
+    '<button id="tts-stop" disabled>⏹ Stop</button>' +
+    '<label>Speed:&nbsp;<select id="tts-rate">' +
+      '<option value="0.75">0.75×</option>' +
+      '<option value="0.9" selected>0.9×</option>' +
+      '<option value="1">1×</option>' +
+      '<option value="1.2">1.2×</option>' +
+    '</select></label>' +
+    '<span id="tts-progress"></span>';
+  document.body.insertBefore(bar, document.body.firstChild);
+
+  var playBtn = document.getElementById('tts-play');
+  var stopBtn = document.getElementById('tts-stop');
+  var rateEl  = document.getElementById('tts-rate');
+  var progEl  = document.getElementById('tts-progress');
+
+  /* ── Highlight current element ── */
+  function highlight(el) {
+    els.forEach(function (e) { e.classList.remove('tts-reading'); });
+    if (el) {
+      el.classList.add('tts-reading');
+      el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  }
+
+  /* ── Speak from a given index ── */
+  function speakAt(i) {
+    synth.cancel();
+    if (i >= els.length) { finish(); return; }
+    idx = i;
+    highlight(els[i]);
+    progEl.textContent = (i + 1) + ' / ' + els.length;
+
+    var utt = new SpeechSynthesisUtterance(els[i].innerText);
+    var voice = pickVoice();
+    if (voice) utt.voice = voice;
+    utt.rate  = parseFloat(rateEl.value);
+    utt.pitch = 0.95;   // slightly lower pitch = warmer, less sharp
+    utt.onend = function () { if (playing) speakAt(idx + 1); };
+    utt.onerror = function (e) { if (e.error !== 'interrupted') speakAt(idx + 1); };
+    synth.speak(utt);
+  }
+
+  /* ── Reset to idle state ── */
+  function finish() {
+    playing = false; paused = false;
+    highlight(null);
+    playBtn.textContent = '🔊 Listen';
+    playBtn.classList.remove('active');
+    stopBtn.disabled = true;
+    progEl.textContent = '';
+  }
+
+  /* ── Play / Pause / Resume ── */
+  playBtn.addEventListener('click', function () {
+    if (!playing && !paused) {
+      els = collect();
+      playing = true;
+      playBtn.textContent = '⏸ Pause';
+      playBtn.classList.add('active');
+      stopBtn.disabled = false;
+      speakAt(0);
+    } else if (playing) {
+      synth.pause();
+      paused = true; playing = false;
+      playBtn.textContent = '▶ Resume';
+      playBtn.classList.remove('active');
+    } else {
+      synth.resume();
+      paused = false; playing = true;
+      playBtn.textContent = '⏸ Pause';
+      playBtn.classList.add('active');
+    }
+  });
+
+  /* ── Stop ── */
+  stopBtn.addEventListener('click', function () {
+    synth.cancel();
+    finish();
+  });
+
+  /* ── Cancel on page exit ── */
+  window.addEventListener('beforeunload', function () { synth.cancel(); });
+})();
+</script>
+</body>
+</html>
